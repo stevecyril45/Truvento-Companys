@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.top-bar {
+  background-color: #14192d;
+  color: white;
+  padding: 5px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.top-links a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.main-header {
+  background-color:#14192d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.logo-text small {
+  font-size: 0.8rem;
+}
+
+.info-area {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-block i {
+  font-size: 1.2rem;
+}
+
+
+.nav-menu {
+  background: #fff;
+  padding: 0 40px;
+  border-top: 4px solid #14192d;
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Ensure it's above other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Optional subtle shadow */
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+  display: flex;
+  gap: 70px;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+li{
+  font-size: large;
+  font-weight: bold;
+}
+.nav-menu ul li a.active {
+  color: #f4a300;
+}
+i {
+  color:#FFA500;
+}
+@media (max-width: 991.98px) {
+  .main-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  .logo-area {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  .info-area {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .info-block {
+    flex: 1 1 150px;
+    justify-content: center;
+  }
+
+  .nav-menu ul {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .main-header {
+    padding: 10px 15px;
+  }
+
+  .logo-img {
+    width: 40px;
+  }
+
+  .logo-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-block strong,
+  .info-block p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .nav-menu ul {
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .nav-menu ul li a {
+    font-size: 0.95rem;
+  }
+
+  .top-bar {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

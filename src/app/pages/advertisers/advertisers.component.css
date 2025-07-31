@@ -1,0 +1,33 @@
+.card {
+  border: 3px solid #FFA500; /* Make all borders initially transparent */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(3px);
+  border: 4px solid #14192d; /* Show top border only on hover */
+}
+i{
+  color: #FFA500;
+}
+.btn {
+  display: inline-block;
+  background-color: #FFA500;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #14192d;
+  color:#FFA500
+}
+span{
+  color: #FFA500;
+}

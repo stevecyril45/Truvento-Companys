@@ -1,0 +1,44 @@
+.hover-shadow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.animated-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+i{
+  color: #FFA500;
+}
+.btn {
+  display: inline-block;
+  background-color: #FFA500;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #14192d;
+  color:#FFA500
+}
+span{
+  color: #FFA500;
+}
+.service-block{
+  border-left:5px solid #FFA500;
+}
+.service-block:hover {
+  transform: translateY(5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #14192d; /* ensure top border is visible */
+  z-index: 2;
+}

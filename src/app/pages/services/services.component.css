@@ -1,0 +1,26 @@
+.box-design {
+  transition: all 0.4s ease;
+}
+
+.box-design:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  background-color: #ffffff;
+}
+.typewriter::after {
+  animation: blink 1s infinite;
+  color: #00796b;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+i{
+  color:#FFA500;
+}

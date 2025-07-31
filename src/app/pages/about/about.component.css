@@ -1,0 +1,36 @@
+.about-container {
+  padding: 60px 20px;
+}
+
+
+p{
+  font-size:medium;
+  font-weight:bold;
+}
+
+
+
+i {
+  color: #FFA500;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #FFA500;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #14192d;
+  color: #FFA500;
+}
+
+span {
+  color: #FFA500;
+  
+}

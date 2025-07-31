@@ -1,0 +1,33 @@
+.partner-card {
+  border-top: 3px solid #FFA500;
+  transition: all 0.3s ease-in-out;
+  box-shadow: none;
+}
+
+.partner-card:hover {
+  transform: translateY(5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #14192d; /* ensure top border is visible */
+  z-index: 2;
+}
+i{
+  color: #FFA500;
+}
+.btn {
+  display: inline-block;
+  background-color: #FFA500;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #14192d;
+  color:#FFA500
+}
+span{
+  color: #FFA500;
+}
