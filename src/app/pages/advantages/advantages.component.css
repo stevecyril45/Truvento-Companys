@@ -5,7 +5,9 @@
 .hover-shadow:hover {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
-
+a{
+  text-decoration: none;
+}
 .animated-text {
   display: inline-block;
   white-space: nowrap;

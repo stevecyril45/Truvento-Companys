@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,9 @@ import { AdvantagesComponent } from './pages/advantages/advantages.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
-import { TypewriterTextDirective } from './pages/advertisers/typewriter-text.directive'; // Adjust path
+import { TypewriterTextDirective } from './pages/advertisers/typewriter-text.directive';
+import { DashboardComponent } from './core/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -29,12 +32,16 @@ import { TypewriterTextDirective } from './pages/advertisers/typewriter-text.dir
     AdvantagesComponent,
     AboutComponent,
     ContactComponent,
-    TypewriterTextDirective
+    TypewriterTextDirective,
+    DashboardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

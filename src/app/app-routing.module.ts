@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ServicesComponent } from './pages/services/services.component';
@@ -8,6 +8,8 @@ import { AdvertisersComponent } from './pages/advertisers/advertisers.component'
 import { AdvantagesComponent } from './pages/advantages/advantages.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DashboardComponent } from './core/dashboard/dashboard.component'; // Adjust path
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,8 +20,14 @@ const routes: Routes = [
   { path: 'advantages', component: AdvantagesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  {path: 'dashboard', component: DashboardComponent }, // Add dashboard route,
+  {path: 'login', component: LoginComponent}, // Add login route
+  {path: '', redirectTo: 'contact', pathMatch: 'full' }
 ];
-
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled', // <-- This scrolls to top on route change
+  anchorScrolling: 'enabled'
+};
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

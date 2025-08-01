@@ -35,7 +35,9 @@
   text-decoration: none;
   transition: background-color 0.3s;
 }
-
+a{
+  text-decoration: none;
+}
 .btn:hover {
   background-color: #14192d;
   color: #ffa500;

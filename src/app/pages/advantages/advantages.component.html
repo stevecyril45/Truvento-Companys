@@ -1,7 +1,7 @@
 <div class="container-xxl py-5">
   <div class="text-center mx-auto" style="max-width: 900px;">
     <p class="fs-5 fw-semibold " style="color: #FFA500;">Advantages</p>
-    <h2 class="animated-text">{{ animatedHeading }}</h2>
+    <h3 class="animated-text">{{ animatedHeading }}</h3>
     <p>
       Navigating today’s digital world requires a strategic partner you can rely on.
       At <strong style="color: #FFA500;">Truvento Company</strong>, we distinguish ourselves through unwavering dedication to innovation,
@@ -10,32 +10,34 @@
     </p>
   </div>
 
-  <div id="advantageCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+<div id="advantageCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
 
-      <div class="carousel-item" *ngFor="let group of cardGroups; let i = index" [class.active]="i === 0">
-        <div class="row">
-          <div class="col-md-6 d-flex" *ngFor="let card of group">
-            <div class="service-block bg-white p-4 w-100 h-100 rounded-3 shadow-sm hover-shadow">
-              <div class="d-flex align-items-center mb-3">
-                <i [class]="'fa fa-' + card.icon + ' fa-2x  me-3'"></i>
-                <h5 class="mb-0">{{ card.title }}</h5>
-              </div>
-              <p>{{ card.description }}</p>
+    <div class="carousel-item" *ngFor="let group of cardGroups; let i = index" [class.active]="i === 0">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0 d-flex" *ngFor="let card of group">
+          <div class="service-block bg-white p-4 w-100 h-100 rounded-3 shadow-sm hover-shadow">
+            <div class="d-flex align-items-center mb-3">
+              <i [class]="'fa fa-' + card.icon + ' fa-2x  me-3'"></i>
+              <h5 class="mb-0">{{ card.title }}</h5>
             </div>
+            <p>{{ card.description }}</p>
           </div>
         </div>
       </div>
-
     </div>
-    <!-- Carousel controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#advantageCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#advantageCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+
   </div>
+
+  <!-- Carousel controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#advantageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#advantageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
 </div>
 
 <div class="py-5 bg-light">
@@ -46,8 +48,8 @@
           Trust <span class="">Truvento Company</span> to turn your advertising vision<br>
           into real-world <span class="">impact</span> and measurable <span class="">results</span>.
         </h2>
-        <button class="btn"  routerLink="/login" > Sign up </button>
-       
+              <button type="button" class="btn" > <a href="https://truvento10037144.offer18.com/m/signup" target="_blank">Sign up</a></button>
+      
       </div>
     </div>
   </div>

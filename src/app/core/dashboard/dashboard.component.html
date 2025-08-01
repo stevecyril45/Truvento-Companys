@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Submitted Contact Forms</h2>
+
+  <div *ngIf="isLoading" class="text-center">
+    <p>Loading submissions...</p>
+  </div>
+
+  <table class="table table-bordered" *ngIf="!isLoading && submissions.length">
+    <thead style="background-color: #14192d;">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let form of submissions">
+        <td>{{ form.name }}</td>
+        <td>{{ form.email }}</td>
+        <td>{{ form.subject }}</td>
+        <td>{{ form.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!isLoading && !submissions.length" class="text-center">
+    <p>No submissions yet.</p>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.dashboard-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #FFA500;
+}
+thead {
+  background-color: #14192d;
+}
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-table th, .contact-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.contact-table th {
+  background-color: #14192d;
+  color: #fff;
+}
+
+.contact-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
