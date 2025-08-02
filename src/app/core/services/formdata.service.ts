@@ -1,4 +1,3 @@
-// src/app/core/services/formdata.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -19,18 +18,25 @@ export class FormdataService {
     return this.http.post(this.apiUrl, formData);
   }
 
-  // GET all form submissions
-  getAllSubmissions(): Observable<Form[]> {
-    return this.http.get<{ [key: string]: Form }>(this.apiUrl).pipe(
-      map(data => {
-        const submissions: Form[] = [];
-        for (const key in data) {
-          if (data.hasOwnProperty(key)) {
-            submissions.push({ ...data[key] });
-          }
+  // GET all submissions (include ID)
+ getAllSubmissions(): Observable<Form[]> {
+  return this.http.get<{ [key: string]: Form }>(this.apiUrl).pipe(
+    map(data => {
+      const submissions: Form[] = [];
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          submissions.push({ ...data[key], id: key }); // ✅ id added last
         }
-        return submissions;
-      })
-    );
+      }
+      return submissions;
+    })
+  );
+}
+
+
+  // DELETE by ID
+  deleteSubmission(id: string): Observable<any> {
+    const deleteUrl = `https://truvento-data-base-default-rtdb.firebaseio.com/form/${id}.json`;
+    return this.http.delete(deleteUrl);
   }
 }

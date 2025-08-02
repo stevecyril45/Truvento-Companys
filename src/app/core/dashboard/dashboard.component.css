@@ -9,14 +9,26 @@ h2 {
   margin-bottom: 20px;
   color: #FFA500;
 }
-thead {
+thead th {
   background-color: #14192d;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Hover effect for <th> elements */
+thead th:hover {
+  background-color: #FFA500;
+  color: #14192d;
+}
+
 .contact-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contact-table th, .contact-table td {

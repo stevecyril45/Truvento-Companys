@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdvantagesComponent implements OnInit {
 
-  headingText: string = 'Why Choose Truvento Company';
+  headingText: string = 'Why Truvento Company?';
   animatedHeading: string = '';
   cardGroups: any[][] = [];
 

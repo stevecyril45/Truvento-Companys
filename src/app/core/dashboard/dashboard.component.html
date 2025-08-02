@@ -4,25 +4,73 @@
   <div *ngIf="isLoading" class="text-center">
     <p>Loading submissions...</p>
   </div>
+<!-- Table -->
+<table class="table table-bordered" *ngIf="!isLoading && pagedSubmissions.length">
+  <thead >
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Action</th> <!-- New column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let form of pagedSubmissions; let i = index">
+      <td>{{ (currentPage - 1) * pageSize + i + 1 }}</td>
+      <td>{{ form.name }}</td>
+      <td>{{ form.email }}</td>
+      <td>{{ form.subject }}</td>
+      <td>{{ form.message }}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="confirmDelete(form.id!)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table class="table table-bordered" *ngIf="!isLoading && submissions.length">
-    <thead style="background-color: #14192d;">
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Subject</th>
-        <th>Message</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let form of submissions">
-        <td>{{ form.name }}</td>
-        <td>{{ form.email }}</td>
-        <td>{{ form.subject }}</td>
-        <td>{{ form.message }}</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- Delete all on page button -->
+<div class="text-center mt-3" *ngIf="pagedSubmissions.length">
+  <button class="btn btn-outline-danger" (click)="confirmDeletePage()">Delete This Page's Submissions</button>
+</div>
+<br>
+<!-- Confirmation Modal -->
+<div class="modal fade show" tabindex="-1" style="display: block;" *ngIf="showConfirm">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger">Confirm Deletion</h5>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete {{ deleteAll ? 'all entries on this page' : 'this entry' }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="cancelDelete()">No</button>
+        <button class="btn btn-danger" (click)="proceedDelete()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pagination Controls -->
+<nav *ngIf="totalPages > 1" class="d-flex justify-content-center mt-3">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="goToPage(currentPage - 1)">Previous</a>
+    </li>
+
+    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+        [class.active]="currentPage === i + 1">
+      <a class="page-link" (click)="goToPage(i + 1)">{{ i + 1 }}</a>
+    </li>
+
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <a class="page-link" (click)="goToPage(currentPage + 1)">Next</a>
+    </li>
+  </ul>
+</nav>
 
   <div *ngIf="!isLoading && !submissions.length" class="text-center">
     <p>No submissions yet.</p>

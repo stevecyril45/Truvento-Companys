@@ -1,0 +1,31 @@
+<br> <div class="login-wrapper">
+  <div class="login-box text-center">
+    <h2 class="mb-4" style="color: #FFA500;">Admin Dashboard</h2>
+<br> <br>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="mb-3">
+        <input 
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="Username"
+          required>
+      </div>
+      <div class="mb-3">
+        <input 
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Password"
+          required>
+      </div>
+      <button 
+        type="submit" 
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+  </div>
+  <br> <br> <br> <br>
+</div>

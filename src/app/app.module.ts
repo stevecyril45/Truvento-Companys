@@ -18,6 +18,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { TypewriterTextDirective } from './pages/advertisers/typewriter-text.directive';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LoginDashboardComponent } from './core/login-dashboard/login-dashboard.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LoginComponent } from './pages/login/login.component';
     TypewriterTextDirective,
     DashboardComponent,
     LoginComponent,
+    LoginDashboardComponent,
   ],
   imports: [
     BrowserModule,
