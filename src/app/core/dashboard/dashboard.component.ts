@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormdataService } from '../../core/services/formdata.service';
 import { Form } from '../../model/form';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-dashboard',
@@ -131,4 +133,27 @@ private finalizeDeletion(): void {
   // Refresh paged data
   this.updatePage();
 
-}}
+}
+isAdmin = true; // Replace with actual admin check
+
+  downloadPDF(): void {
+    const element = document.getElementById('dashboardData');
+    if (!element) return;
+
+    html2canvas(element).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('dashboard-report.pdf');
+    });
+  }
+}

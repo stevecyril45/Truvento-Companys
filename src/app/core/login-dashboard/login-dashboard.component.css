@@ -1,27 +1,80 @@
-.login-wrapper {
+/* Full screen background and centering */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Container centers child content using Flexbox */
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #eef2f5;
+  height: 100vh; /* Full viewport height */
+  background-color:#E0E0E0; /* or any dark background */
 }
 
+/* Box styles */
 .login-box {
-  padding: 30px;
-  border: 10px solid #14192d;
-  width: 320px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
 }
 
-.login-box input {
-  width: 80%; /* Adjust to your desired width */
-  padding: 8px;
-  margin-bottom: 15px;
+/* Text and label styling */
+.login-box h2 {
+  margin-bottom: 10px;
+}
+
+.subtext {
   font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Form fields */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  background: #f3f3f3;
   border-radius: 4px;
 }
-.login-box .btn {
-  width: 80%;
-  margin-top: 10px;
+
+/* Password icon wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+/* Submit button */
+.btn {
+  display: inline-block;
+  background-color: #ffa500;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #14192d;
+  color: #ffa500;
+}
+.eye-icon i {
+  font-size: 18px;
+  color: #aaa;
 }

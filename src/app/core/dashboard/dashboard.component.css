@@ -45,3 +45,19 @@ thead th:hover {
 .contact-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+.btn1 {
+  display: inline-block;
+  background-color: #ffa500;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 2%;
+  transition: background-color 0.3s;
+}
+.btn1:hover {
+  background-color: #14192d;
+  color: #ffa500;
+}
