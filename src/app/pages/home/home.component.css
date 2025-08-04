@@ -6,7 +6,6 @@
   align-items: center;
   padding: 0 60px;
 }
-
 .hero-content {
   max-width: 700px;
   color: #ffffff;
@@ -37,6 +36,7 @@
 }
 a{
   text-decoration: none;
+  margin: 10px;
 }
 .btn:hover {
   background-color: #14192d;
@@ -100,6 +100,9 @@ a{
   border-radius: 8px;
   background-color: #fff;
   padding: 8px 16px;
+}
+#btn {
+  min-width: 200px;
 }
 .team-item {
   background-color: #f8f9fa;
